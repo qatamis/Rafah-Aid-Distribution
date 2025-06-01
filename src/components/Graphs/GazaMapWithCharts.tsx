@@ -1,22 +1,8 @@
 import React, { useState } from "react";
-import { chartData, chartData as originalData } from "./ChartData";
+import { chartData } from "./ChartData";
 import DoughnutChart from "./DoughnutChart";
 
 // Function to scale SVG pathData
-function scalePathData(path: string, scale: number): string {
-  return path.replace(/([MLCQZ])([^MLCQZ]*)/gi, (_, cmd, coords) => {
-    if (cmd.toUpperCase() === "Z") return cmd;
-
-    const parts = coords.match(/-?\d+(\.\d+)?/g);
-    if (!parts) return cmd;
-
-    const scaled = parts
-      .map((n: string) => (parseFloat(n) * scale).toFixed(2))
-      .join(",");
-
-    return `${cmd}${scaled}`;
-  });
-}
 
 const GazaMapWithCharts = () => {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
@@ -102,46 +88,6 @@ const GazaMapWithCharts = () => {
       {/* SVG Map */}
       <div className="w-full md:w-1/2 border border-gray-300 rounded-md bg-white shadow">
         <div className="w-full lg:h-[715px] md:h-[715px] h-[715px]">
-          {/* <svg
-            viewBox="0 0 1000 4000"
-            className="w-full h-full"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {chartData.map((region) => (
-              <path
-                key={region.id}
-                d={region.pathData}
-                onClick={() => handleSelect(region.id)}
-                onMouseEnter={() =>
-                  setTooltip({
-                    content: region.title,
-                    x: 0,
-                    y: 0,
-                    visible: true,
-                  })
-                }
-                onMouseMove={(e) =>
-                  setTooltip((prev) => ({
-                    ...prev,
-                    x: e.clientX,
-                    y: e.clientY,
-                  }))
-                }
-                onMouseLeave={() =>
-                  setTooltip((prev) => ({
-                    ...prev,
-                    visible: false,
-                  }))
-                }
-                className={`w-full max-w-4xl mx-auto h-auto block transition-all duration-300 stroke-gray-700 stroke-[1.5] cursor-pointer ${
-                  selectedRegion === region.id
-                    ? "fill-blue-500"
-                    : "fill-gray-200 hover:fill-blue-300"
-                }`}
-              />
-            ))}
-          </svg> */}
           <div className="flex flex-col items-center">
             {chartData.map((region) => (
               <img
