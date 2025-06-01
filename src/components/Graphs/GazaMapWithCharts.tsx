@@ -43,7 +43,7 @@ const GazaMapWithCharts = () => {
   return (
     <div className="relative flex flex-col gap-6 items-center md:flex-row md:items-start rtl">
       <div className="w-full bg-white border border-gray-300 rounded-md shadow p-6 text-right leading-loose space-y-4">
-        <p className="text-gray-800">
+        <p className="text-gray-800 font-JazBold">
           أظهرت بيانات جديدة أن كامل سكان قطاع غزة يعانون من مستويات خطيرة من
           انعدام الأمن الغذائي، في ظل استمرار الحصار والعدوان الإسرائيلي. وبحسب
           التقرير، فإن 93% من السكان الخاضعين للتحليل يعيشون في المرحلة الثالثة
@@ -62,9 +62,9 @@ const GazaMapWithCharts = () => {
                   src="chleg1.png"
                   alt=""
                 />
-                <strong>المرحلة الثانية – الضغط (Stressed):</strong> الأسر تملك
-                ما يكفي من الطعام بالكاد، لكنها تواجه صعوبة في تلبية الاحتياجات
-                الأساسية الأخرى.
+                <strong>المرحلة الثانية – الضغط</strong> الأسر تملك ما يكفي من
+                الطعام بالكاد، لكنها تواجه صعوبة في تلبية الاحتياجات الأساسية
+                الأخرى.
               </div>
             </li>
             <li className="list-none">
@@ -74,8 +74,8 @@ const GazaMapWithCharts = () => {
                   src="chleg2.png"
                   alt=""
                 />
-                <strong>المرحلة الثالثة – الأزمة (Crisis):</strong> الأسر تواجه
-                نقصًا حادًا في الغذاء يؤثر سلبًا على صحتها وسبل عيشها.
+                <strong>المرحلة الثالثة – الأزمة</strong> الأسر تواجه نقصًا
+                حادًا في الغذاء يؤثر سلبًا على صحتها وسبل عيشها.
               </div>
             </li>
             <li className="list-none">
@@ -85,9 +85,9 @@ const GazaMapWithCharts = () => {
                   src="chleg3.png"
                   alt=""
                 />
-                <strong>المرحلة الرابعة – الطوارئ (Emergency):</strong> الأسر
-                تعاني من نقص حاد في الغذاء، وسوء تغذية مرتفع، مع مخاطر الوفاة،
-                ما يتطلب تدخلًا عاجلًا.
+                <strong>المرحلة الرابعة – الطوارئ</strong> الأسر تعاني من نقص
+                حاد في الغذاء، وسوء تغذية مرتفع، مع مخاطر الوفاة، ما يتطلب
+                تدخلًا عاجلًا.
               </div>
             </li>
             <li className="list-none">
@@ -97,9 +97,9 @@ const GazaMapWithCharts = () => {
                   src="chleg4.png"
                   alt=""
                 />
-                <strong>المرحلة الخامسة – الكارثة (Catastrophe):</strong> الأسر
-                تعيش ظروفًا كارثية، مع نقص غذاء حاد ومجاعات تؤدي إلى معدلات وفاة
-                مرتفعة. إنقاذ حياتهم يتطلب تحركًا فوريًا.
+                <strong>المرحلة الخامسة – الكارثة</strong> الأسر تعيش ظروفًا
+                كارثية، مع نقص غذاء حاد ومجاعات تؤدي إلى معدلات وفاة مرتفعة.
+                إنقاذ حياتهم يتطلب تحركًا فوريًا.
               </div>
             </li>
           </ul>
