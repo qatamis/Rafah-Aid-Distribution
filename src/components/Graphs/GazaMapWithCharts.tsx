@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { chartData as originalData } from "./ChartData";
+import { chartData, chartData as originalData } from "./ChartData";
 import DoughnutChart from "./DoughnutChart";
 
 // Function to scale SVG pathData
@@ -18,13 +18,6 @@ function scalePathData(path: string, scale: number): string {
   });
 }
 
-// Scale all chartData paths
-const SCALE = 4;
-const chartData = originalData.map((region) => ({
-  ...region,
-  pathData: scalePathData(region.pathData, SCALE),
-}));
-
 const GazaMapWithCharts = () => {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   const [tooltip, setTooltip] = useState<{
@@ -42,7 +35,7 @@ const GazaMapWithCharts = () => {
 
   return (
     <div className="relative flex flex-col gap-6 items-center md:flex-row md:items-start rtl">
-      <div className="w-full bg-white border border-gray-300 rounded-md shadow p-6 text-right leading-loose space-y-4">
+      <div className="w-full lg:h-[715px] bg-white border border-gray-300 rounded-md shadow p-6 text-right leading-loose space-y-4">
         <p className="text-gray-800 font-JazBold">
           أظهرت بيانات جديدة أن كامل سكان قطاع غزة يعانون من مستويات خطيرة من
           انعدام الأمن الغذائي، في ظل استمرار الحصار والعدوان الإسرائيلي. وبحسب
@@ -108,8 +101,8 @@ const GazaMapWithCharts = () => {
 
       {/* SVG Map */}
       <div className="w-full md:w-1/2 border border-gray-300 rounded-md bg-white shadow">
-        <div className="w-full lg:h-[477px] md:h-[200px] h-[200px]">
-          <svg
+        <div className="w-full lg:h-[715px] md:h-[715px] h-[715px]">
+          {/* <svg
             viewBox="0 0 1000 4000"
             className="w-full h-full"
             preserveAspectRatio="none"
@@ -148,13 +141,45 @@ const GazaMapWithCharts = () => {
                 }`}
               />
             ))}
-          </svg>
+          </svg> */}
+          <div className="flex flex-col items-center">
+            {chartData.map((region) => (
+              <img
+                key={region.id}
+                src={region.imgSrc}
+                alt="North Gaza"
+                className={`transition duration-300 ease-in-out transform hover:scale-105 hover:brightness-110 ${region.class}`}
+                onClick={() => handleSelect(region.id)}
+                onMouseEnter={() =>
+                  setTooltip({
+                    content: region.title,
+                    x: 0,
+                    y: 0,
+                    visible: true,
+                  })
+                }
+                onMouseMove={(e) =>
+                  setTooltip((prev) => ({
+                    ...prev,
+                    x: e.clientX,
+                    y: e.clientY,
+                  }))
+                }
+                onMouseLeave={() =>
+                  setTooltip((prev) => ({
+                    ...prev,
+                    visible: false,
+                  }))
+                }
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Doughnut chart */}
       <div
-        className={`w-full md:w-1/3 lg:h-[477px] bg-white border rounded-md shadow p-6 transition-all duration-500 ${
+        className={`w-full md:w-1/3 lg:h-[715px] bg-white border rounded-md shadow p-6 transition-all duration-500 ${
           selectedChart
             ? "opacity-100 scale-100"
             : "opacity-0 scale-95 pointer-events-none"
