@@ -4,7 +4,7 @@ export const chartData = [
     title: "شمال غزة",
     labels: ["ضغط", "كارثة", "أزمة", "طوارئ"],
     data: [5, 15, 35, 45],
-    class: "ml-7 pt-5 w-[145px]",
+    class: "ml-7 pt-5 w-[120px]",
     imgSrc: "NorthGaza.png",
   },
   {
@@ -12,7 +12,7 @@ export const chartData = [
     title: "مدينة غزة",
     labels: ["ضغط", "كارثة", "أزمة", "طوارئ"],
     data: [5, 15, 35, 45],
-    class: "-mt-4 ml-2 w-[118px]",
+    class: "-mt-3 ml-4 w-[100px]",
     imgSrc: "Gaza-City.png",
   },
   {
@@ -20,7 +20,7 @@ export const chartData = [
     title: "دير البلح",
     labels: ["ضغط", "كارثة", "أزمة", "طوارئ"],
     data: [10, 5, 40, 45],
-    class: "-mt-7 mr-4 w-[95px]",
+    class: "-mt-6 mr-1 w-[80px]",
     imgSrc: "DerBalah.png",
   },
   {
@@ -28,7 +28,7 @@ export const chartData = [
     title: "خان يونس",
     labels: ["ضغط", "كارثة", "أزمة", "طوارئ"],
     data: [10, 10, 35, 45],
-    class: "-mt-5 ml-[50px] w-[190px]",
+    class: "-mt-4 ml-[50px] w-[160px]",
     imgSrc: "khan-younes.png",
   },
   {
@@ -36,7 +36,7 @@ export const chartData = [
     title: "رفــــــــح",
     labels: ["كارثة", "أزمة", "طوارئ"],
     data: [15, 25, 60],
-    class: "-mt-[43px] ml-8 w-[185px]",
+    class: "-mt-[35px] ml-9 w-[155px]",
     imgSrc: "rafah.png",
   },
 ];
